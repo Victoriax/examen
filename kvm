@@ -1,0 +1,12 @@
+#!/bin/bash
+ 
+#Creacion Maquina Virtual.
+
+VBoxManage createvm \ 
+		--name "$MACHINE_NAME"
+
+VBoxManage creathd \ 	
+		--filename "$HOME/$MACHINE_DIR/$MACHINE_NAME/$VHD_NAME" \
+		--size "$VHD_SIZE"
+VBoxManage registervm "$HOME/$MACHINE_DIR/$MACHINE_NAME/${VHD_NAME}.vbox"
+
